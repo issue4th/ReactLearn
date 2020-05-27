@@ -1,46 +1,37 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Person from './Person/Person';
 
-class App extends Component {
-  // Component property 'state' is monitored by React via setState
-  state = {
+const App = (props) => {
+  // useState returns an array with eactly 2 elements
+  // [0] The state
+  // [1] A function for updating the state
+  const [state, setState] = useState({
     persons: [
       { name: 'Rob', age: 51 },
       { name: 'Tim', age: 44 },
       { name: 'John', age: 99 },
     ],
-  };
+  });
 
-  switchNameHandler = () => {
-    let newPersons = [this.state.persons[1], this.state.persons[2]];
+  const switchNameHandler = () => {
+    let newPersons = [state.persons[1], state.persons[2]];
     newPersons.push({ name: 'Blah', age: 23 });
-    this.setState({ persons: newPersons });
+    setState({ persons: newPersons });
   };
 
-  render = () => {
-    return (
-      <div className='App'>
-        <h1>Hi', I'm a React app!</h1>
-        <p>This is really working!</p>
-        <button onClick={this.switchNameHandler}>Switch name</button>
-        <Person
-          name={this.state.persons[0].name}
-          age={this.state.persons[0].age}
-        />
-        <Person
-          name={this.state.persons[1].name}
-          age={this.state.persons[1].age}
-        />
-        <Person
-          name={this.state.persons[2].name}
-          age={this.state.persons[2].age}
-        >
-          My hobbies: drones and kayaks
-        </Person>
-      </div>
-    );
-  };
-}
+  return (
+    <div className='App'>
+      <h1>Hi', I'm a React app!</h1>
+      <p>This is really working!</p>
+      <button onClick={switchNameHandler}>Switch name</button>
+      <Person name={state.persons[0].name} age={state.persons[0].age} />
+      <Person name={state.persons[1].name} age={state.persons[1].age} />
+      <Person name={state.persons[2].name} age={state.persons[2].age}>
+        My hobbies: drones and kayaks
+      </Person>
+    </div>
+  );
+};
 
 export default App;
