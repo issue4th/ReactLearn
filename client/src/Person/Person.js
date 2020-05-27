@@ -1,9 +1,12 @@
 import React from 'react';
 import './Person.css';
-import { render } from 'react-dom';
 
-const person = () => (
-  <p>I'm a Person and I'm {Math.floor(Math.random() * 50)} years old!</p>
-);
+const person = (props) => {
+  return (
+    <p>
+      I'm {props.name} and I'm {props.age} years old!
+    </p>
+  );
+};
 
 export default person;

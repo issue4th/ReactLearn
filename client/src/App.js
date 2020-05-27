@@ -12,11 +12,7 @@ class App extends Component {
         <Person name='Tim' age='44' />
         <Person name='John' age='99'>
           My hobbies: drones and kayaks
-        </Person>{' '}
-        />
-        <Person />
-        <Person />
-        <Person />
+        </Person>
       </div>
     );
   };
