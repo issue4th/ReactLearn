@@ -29,6 +29,7 @@ class App extends Component {
           age={this.state.persons[0].age}
         />
         <Person
+          clickHandler={this.switchNameHandler}
           name={this.state.persons[1].name}
           age={this.state.persons[1].age}
         />
