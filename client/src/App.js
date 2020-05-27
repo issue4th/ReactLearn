@@ -3,7 +3,7 @@ import './App.css';
 import Person from './Person/Person';
 
 class App extends Component {
-  // Component property 'state' is monitored by React
+  // Component property 'state' is monitored by React via setState
   state = {
     persons: [
       { name: 'Rob', age: 51 },
@@ -13,7 +13,9 @@ class App extends Component {
   };
 
   switchNameHandler = () => {
-    console.log('Was clicked');
+    let newPersons = [this.state.persons[1], this.state.persons[2]];
+    newPersons.push({ name: 'Blah', age: 23 });
+    this.setState({ ...this.state, persons: newPersons });
   };
 
   render = () => {
