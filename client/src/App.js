@@ -3,6 +3,7 @@ import './App.css';
 import Person from './Person/Person';
 
 class App extends Component {
+  // Component property 'state' is monitored by React
   state = {
     persons: [
       { name: 'Rob', age: 51 },
@@ -15,9 +16,18 @@ class App extends Component {
       <div className='App'>
         <h1>Hi', I'm a React app!</h1>
         <p>This is really working!</p>
-        <Person name='Rob' age='51' />
-        <Person name='Tim' age='44' />
-        <Person name='John' age='99'>
+        <Person
+          name={this.state.persons[0].name}
+          age={this.state.persons[0].age}
+        />
+        <Person
+          name={this.state.persons[1].name}
+          age={this.state.persons[1].age}
+        />
+        <Person
+          name={this.state.persons[2].name}
+          age={this.state.persons[2].age}
+        >
           My hobbies: drones and kayaks
         </Person>
       </div>
