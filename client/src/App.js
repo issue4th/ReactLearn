@@ -3,8 +3,8 @@ import './App.css';
 import Person from './Person/Person';
 
 const App = (props) => {
-  // useState returns an array with eactly 2 elements
-  // [0] The state
+  // useState returns an array with exactly 2 elements
+  // [0] The state (or state section)
   // [1] A function for updating the state
   const [state, setState] = useState({
     persons: [
@@ -12,6 +12,9 @@ const App = (props) => {
       { name: 'Tim', age: 44 },
       { name: 'John', age: 99 },
     ],
+  });
+
+  const [otherState, setOtherState] = useState({
     otherState: 'Not used here',
   });
 
@@ -21,6 +24,7 @@ const App = (props) => {
     setState({ ...state, persons: newPersons });
 
     console.log(state);
+    console.log(otherState);
   };
 
   return (
