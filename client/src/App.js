@@ -12,12 +12,15 @@ const App = (props) => {
       { name: 'Tim', age: 44 },
       { name: 'John', age: 99 },
     ],
+    otherState: 'Not used here',
   });
 
   const switchNameHandler = () => {
     let newPersons = [state.persons[1], state.persons[2]];
     newPersons.push({ name: 'Blah', age: 23 });
-    setState({ persons: newPersons });
+    setState({ ...state, persons: newPersons });
+
+    console.log(state);
   };
 
   return (
