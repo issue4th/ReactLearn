@@ -15,7 +15,7 @@ class App extends Component {
   switchNameHandler = () => {
     let newPersons = [this.state.persons[1], this.state.persons[2]];
     newPersons.push({ name: 'Blah', age: 23 });
-    this.setState({ ...this.state, persons: newPersons });
+    this.setState({ persons: newPersons });
   };
 
   render = () => {
