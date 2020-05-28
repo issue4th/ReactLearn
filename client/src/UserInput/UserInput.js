@@ -4,8 +4,12 @@ import React, { Component } from 'react';
 class UserInput extends Component {
   state = {};
 
+  onChangeHandler = () => {
+    console.log('Input changed');
+  };
+
   render = () => {
-    return <input type='text' />;
+    return <input type='text' onChange={this.onChangeHandler} />;
   };
 }
 
