@@ -21,6 +21,9 @@ const rootReducer = (state = initialState, action) => {
 // Store
 const store = createStore(rootReducer);
 
+// Subscriptions
+store.subscribe(() => console.log('Subscription:', store.getState()));
+
 // Action
 store.dispatch({ type: 'INC_COUNTER' });
 store.dispatch({ type: 'ADD_COUNTER', value: 10 });
