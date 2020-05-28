@@ -6,9 +6,9 @@ class App extends Component {
   // Component property 'state' is monitored by React via setState
   state = {
     persons: [
-      { name: 'Rob', age: 51 },
-      { name: 'Tim', age: 44 },
-      { name: 'John', age: 99 },
+      { id: 123, name: 'Rob', age: 51 },
+      { id: 234, name: 'Tim', age: 44 },
+      { id: 345, name: 'John', age: 99 },
     ],
   };
 
@@ -21,7 +21,7 @@ class App extends Component {
   render = () => {
     let personsJsx = this.state.persons.map((person, index) => (
       <Person
-        key={index}
+        key={person.id}
         clickHandler={() => this.switchNameHandler(index)}
         name={person.name}
         age={person.age}
