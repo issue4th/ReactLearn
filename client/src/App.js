@@ -7,11 +7,15 @@ class App extends Component {
   // Component property 'state' is monitored by React via setState
   state = {};
 
+  onInputChangeHandler = () => {
+    console.log('Input changed');
+  };
+
   render = () => {
     return (
       <div className='App'>
         <h1>Exercise 1!</h1>
-        <UserInput />
+        <UserInput onChangeHandler={this.onInputChangeHandler} />
         <UserOutput userName='Rob' />
         <UserOutput userName='Timbo' />
       </div>
