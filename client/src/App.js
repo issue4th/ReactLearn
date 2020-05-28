@@ -12,33 +12,28 @@ class App extends Component {
     ],
   };
 
-  switchNameHandler = () => {
-    let newPersons = [this.state.persons[1], this.state.persons[2]];
-    newPersons.push({ name: 'Blah', age: 23 });
+  switchNameHandler = (index) => {
+    let newPersons = [...this.state.persons];
+    newPersons[index] = { name: 'Blah', age: 23 };
     this.setState({ persons: newPersons });
   };
 
   render = () => {
+    let personsJsx = this.state.persons.map((person, index) => (
+      <Person
+        key={index}
+        clickHandler={() => this.switchNameHandler(index)}
+        name={person.name}
+        age={person.age}
+      />
+    ));
+
     return (
       <div className='App'>
         <h1>Hi', I'm a React app!</h1>
         <p>This is really working!</p>
-        <button onClick={this.switchNameHandler}>Switch name</button>
-        <Person
-          name={this.state.persons[0].name}
-          age={this.state.persons[0].age}
-        />
-        <Person
-          clickHandler={this.switchNameHandler}
-          name={this.state.persons[1].name}
-          age={this.state.persons[1].age}
-        />
-        <Person
-          name={this.state.persons[2].name}
-          age={this.state.persons[2].age}
-        >
-          My hobbies: drones and kayaks
-        </Person>
+        <button onClick={() => this.switchNameHandler(0)}>Switch name</button>
+        {personsJsx}
       </div>
     );
   };
