@@ -1,11 +1,21 @@
 import React, { Component } from 'react';
-//import './UserInput.css';
 
 class UserInput extends Component {
   state = {};
 
+  inlineStyle = {
+    backgroundColor: 'grey',
+    border: '1px solid #f00',
+  };
+
   render = () => {
-    return <input type='text' onChange={this.props.onChangeHandler} />;
+    return (
+      <input
+        type='text'
+        style={this.inlineStyle}
+        onChange={this.props.onChangeHandler}
+      />
+    );
   };
 }
 
