@@ -7,6 +7,7 @@ class UserOutput extends Component {
   render = () => {
     return (
       <div>
+        <p>Username: {this.props.userName}</p>
         <p>Paragraph 1</p>
         <p>Paragraph 2</p>
       </div>

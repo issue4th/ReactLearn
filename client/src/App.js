@@ -12,7 +12,8 @@ class App extends Component {
       <div className='App'>
         <h1>Exercise 1!</h1>
         <UserInput />
-        <UserOutput />
+        <UserOutput userName='Rob' />
+        <UserOutput userName='Timbo' />
       </div>
     );
   };
