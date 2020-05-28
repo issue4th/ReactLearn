@@ -5,19 +5,30 @@ import UserOutput from './UserOutput/UserOutput';
 
 class App extends Component {
   // Component property 'state' is monitored by React via setState
-  state = {};
+  state = {
+    userName: ['Rob', 'Timbo'],
+    otherState: ["Don't touch"],
+  };
 
-  onInputChangeHandler = () => {
-    console.log('Input changed');
+  onInputChangeHandler = (index, event) => {
+    let userNames = this.state.userName;
+    userNames[index] = event.target.value;
+
+    this.setState({ userName: userNames });
   };
 
   render = () => {
     return (
       <div className='App'>
-        <h1>Exercise 1!</h1>
-        <UserInput onChangeHandler={this.onInputChangeHandler} />
-        <UserOutput userName='Rob' />
-        <UserOutput userName='Timbo' />
+        <h1>Exercise 1</h1>
+        <UserInput
+          onChangeHandler={(text) => this.onInputChangeHandler(0, text)}
+        />
+        <UserOutput userName={this.state.userName[0]} />
+        <UserInput
+          onChangeHandler={(text) => this.onInputChangeHandler(1, text)}
+        />
+        <UserOutput userName={this.state.userName[1]} />
       </div>
     );
   };
