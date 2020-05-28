@@ -21,14 +21,18 @@ class App extends Component {
     return (
       <div className='App'>
         <h1>Exercise 1</h1>
-        <UserInput
-          onChangeHandler={(text) => this.onInputChangeHandler(0, text)}
-        />
-        <UserOutput userName={this.state.userName[0]} />
-        <UserInput
-          onChangeHandler={(text) => this.onInputChangeHandler(1, text)}
-        />
-        <UserOutput userName={this.state.userName[1]} />
+        <div className='InputComponentThatIsnt'>
+          <UserInput
+            onChangeHandler={(text) => this.onInputChangeHandler(0, text)}
+          />
+          <UserOutput userName={this.state.userName[0]} />
+        </div>
+        <div className='InputComponentThatIsnt'>
+          <UserInput
+            onChangeHandler={(text) => this.onInputChangeHandler(1, text)}
+          />
+          <UserOutput userName={this.state.userName[1]} />
+        </div>
       </div>
     );
   };

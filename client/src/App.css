@@ -1,3 +1,9 @@
 .App {
   text-align: center;
 }
+
+.InputComponentThatIsnt {
+  float: left;
+  width: 40%;
+  margin: 10 auto;
+}
