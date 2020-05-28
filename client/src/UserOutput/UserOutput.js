@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import './UserOutput.css';
 
 class UserOutput extends Component {
-  state = {};
-
   render = () => {
     return (
       <div className='UserOutput'>

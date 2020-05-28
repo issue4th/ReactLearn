@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 
 class UserInput extends Component {
-  state = {};
-
   inlineStyle = {
     backgroundColor: 'grey',
     border: '1px solid #f00',
