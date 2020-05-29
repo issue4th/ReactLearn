@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Person from './Person/Person';
+import Person from '../components/Person/Person';
 
 class App extends Component {
   // Component property 'state' is monitored by React via setState
