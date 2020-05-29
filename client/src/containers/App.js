@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Person from '../components/Person/Person';
+import Persons from '../components/Persons/Persons';
 
 class App extends Component {
   // Component property 'state' is monitored by React via setState
@@ -19,21 +19,15 @@ class App extends Component {
   };
 
   render = () => {
-    let personsJsx = this.state.persons.map((person, index) => (
-      <Person
-        key={person.id}
-        clickHandler={() => this.switchNameHandler(index)}
-        name={person.name}
-        age={person.age}
-      />
-    ));
-
     return (
       <div className='App'>
         <h1>Hi', I'm a React app!</h1>
         <p>This is really working!</p>
         <button onClick={() => this.switchNameHandler(0)}>Switch name</button>
-        {personsJsx}
+        <Persons
+          persons={this.state.persons}
+          switchNameHandler={this.switchNameHandler}
+        />
       </div>
     );
   };
