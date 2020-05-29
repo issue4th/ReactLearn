@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+
 import './App.css';
 import Persons from '../components/Persons/Persons';
+import Cockpit from '../components/Cockpit/Cockpit';
 
 class App extends Component {
   // Component property 'state' is monitored by React via setState
@@ -21,9 +23,7 @@ class App extends Component {
   render = () => {
     return (
       <div className='App'>
-        <h1>Hi', I'm a React app!</h1>
-        <p>This is really working!</p>
-        <button onClick={() => this.switchNameHandler(0)}>Switch name</button>
+        <Cockpit clickHandler={() => this.switchNameHandler(0)} />
         <Persons
           persons={this.state.persons}
           clickHandler={this.switchNameHandler}
