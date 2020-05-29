@@ -27,7 +27,8 @@ class App extends Component {
   };
 
   render = () => {
-    const personsJsx = !this.state.showPersons ? null : (
+    const showPersons = this.state.showPersons;
+    const personsJsx = !showPersons ? null : (
       <Persons
         persons={this.state.persons}
         clickHandler={this.switchNameHandler}
@@ -36,7 +37,10 @@ class App extends Component {
 
     return (
       <div className='App'>
-        <Cockpit clickHandler={this.togglePersonshandler} />
+        <Cockpit
+          showPersons={showPersons}
+          clickHandler={this.togglePersonshandler}
+        />
         {personsJsx}
       </div>
     );
