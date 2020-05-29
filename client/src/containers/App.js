@@ -12,6 +12,12 @@ class App extends Component {
       { id: 234, name: 'Tim', age: 44 },
       { id: 345, name: 'John', age: 99 },
     ],
+    showPersons: false,
+  };
+
+  togglePersonshandler = (index) => {
+    let showPersons = this.state.showPersons;
+    this.setState({ showPersons: !showPersons });
   };
 
   switchNameHandler = (index) => {
@@ -21,13 +27,17 @@ class App extends Component {
   };
 
   render = () => {
+    const personsJsx = !this.state.showPersons ? null : (
+      <Persons
+        persons={this.state.persons}
+        clickHandler={this.switchNameHandler}
+      />
+    );
+
     return (
       <div className='App'>
-        <Cockpit clickHandler={() => this.switchNameHandler(0)} />
-        <Persons
-          persons={this.state.persons}
-          clickHandler={this.switchNameHandler}
-        />
+        <Cockpit clickHandler={this.togglePersonshandler} />
+        {personsJsx}
       </div>
     );
   };
